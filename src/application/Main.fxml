@@ -1,0 +1,93 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import javafx.geometry.Insets?>
+<?import javafx.scene.control.Button?>
+<?import javafx.scene.control.Label?>
+<?import javafx.scene.control.SplitPane?>
+<?import javafx.scene.control.TextArea?>
+<?import javafx.scene.control.TextField?>
+<?import javafx.scene.layout.BorderPane?>
+<?import javafx.scene.layout.HBox?>
+<?import javafx.scene.layout.VBox?>
+<?import javafx.scene.text.Font?>
+
+<VBox alignment="TOP_CENTER" maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="530.0" prefWidth="450.0" spacing="2.0" xmlns="http://javafx.com/javafx/8.0.111" xmlns:fx="http://javafx.com/fxml/1" fx:controller="application.Controls">
+   <padding>
+      <Insets bottom="1.0" left="1.0" right="1.0" top="1.0" />
+   </padding>
+   <children>
+      <Label fx:id="info" text="Welcome to Copy Machine." textAlignment="CENTER">
+         <font>
+            <Font size="14.0" />
+         </font>
+         <VBox.margin>
+            <Insets bottom="3.0" left="3.0" right="3.0" top="3.0" />
+         </VBox.margin>
+      </Label>
+      <Label alignment="TOP_CENTER" prefHeight="222.0" prefWidth="411.0" text="This program allows you to create copies of sections for RA2/TS maps&#10;by just incrementing ID values.&#10;&#10;To begin, select a file and enter a section.&#10;The syntax for incrementing values is to surround them with &quot;{&quot; &quot;}&quot;.&#10;If you are making a TeamType and want a incrementing waypoint to be&#10;converted to alphabetic format, just enter it like any other incrementing&#10;integer value, but add an underscore before closing it. The value&#10;surrounded with &quot;[&quot; &quot;]&quot; will be interpreted as the section ID, and will be&#10;automatically added to the list specified in the input field below.">
+         <VBox.margin>
+            <Insets bottom="5.0" />
+         </VBox.margin></Label>
+      <SplitPane dividerPositions="0.55" prefHeight="281.0" prefWidth="423.0">
+         <items>
+            <BorderPane prefHeight="200.0" prefWidth="200.0">
+               <center>
+                  <TextArea fx:id="data" prefHeight="224.0" prefWidth="282.0" promptText="Enter the section you want to copy here..." BorderPane.alignment="CENTER">
+                     <BorderPane.margin>
+                        <Insets bottom="2.0" left="2.0" right="2.0" top="2.0" />
+                     </BorderPane.margin>
+                  </TextArea>
+               </center>
+            </BorderPane>
+            <VBox alignment="TOP_CENTER">
+               <children>
+                  <TextField fx:id="type" promptText="Section type. Example: ScriptTypes">
+                     <VBox.margin>
+                        <Insets bottom="1.0" left="1.0" right="1.0" top="1.0" />
+                     </VBox.margin>
+                  </TextField>
+                  <TextField fx:id="amount" promptText="Amount of sections to create.">
+                     <VBox.margin>
+                        <Insets bottom="1.0" left="1.0" right="1.0" top="1.0" />
+                     </VBox.margin>
+                  </TextField>
+                  <Label prefHeight="142.0" prefWidth="169.0" text="Examples:&#10;TaskForce={01001} will result in&#10;sections which have task forces&#10;with IDs 01001, 01002, 01003&#10;and so on.&#10;Waypoint={2_} will result in&#10;sections which have waypoints&#10;C, D, E, F and so on.&#10;" />
+               </children>
+            </VBox>
+         </items>
+      </SplitPane>
+      <Label fx:id="selected" text="No file selected." textFill="#5b5b5b">
+         <font>
+            <Font size="10.0" />
+         </font>
+         <VBox.margin>
+            <Insets bottom="3.0" left="3.0" right="3.0" top="3.0" />
+         </VBox.margin>
+      </Label>
+      <Label fx:id="status">
+         <font>
+            <Font size="14.0" />
+         </font>
+         <VBox.margin>
+            <Insets bottom="2.0" left="2.0" right="2.0" top="2.0" />
+         </VBox.margin>
+      </Label>
+      <HBox alignment="CENTER" prefHeight="71.0" prefWidth="423.0">
+         <children>
+            <Button maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" mnemonicParsing="false" onAction="#select" prefHeight="33.0" prefWidth="95.0" text="Select File">
+               <HBox.margin>
+                  <Insets bottom="4.0" left="4.0" right="4.0" top="4.0" />
+               </HBox.margin>
+            </Button>
+            <Button maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" mnemonicParsing="false" onAction="#execute" prefHeight="33.0" prefWidth="95.0" text="Execute">
+               <HBox.margin>
+                  <Insets bottom="4.0" left="4.0" right="4.0" top="4.0" />
+               </HBox.margin></Button>
+            <Button maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" mnemonicParsing="false" onAction="#terminate" prefHeight="33.0" prefWidth="95.0" text="Exit">
+               <HBox.margin>
+                  <Insets bottom="4.0" left="4.0" right="4.0" top="4.0" />
+               </HBox.margin></Button>
+         </children>
+      </HBox>
+   </children>
+</VBox>

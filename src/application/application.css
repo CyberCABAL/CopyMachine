@@ -1,0 +1,8 @@
+
+.button {
+	-fx-font-size: 15px;
+}
+
+#action, #waypoint, #start, #end {
+	-fx-font-size: 12px;
+}
